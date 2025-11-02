@@ -1,5 +1,6 @@
 import React from "react";
 import { IconType } from "react-icons";
+import { LuPlus, LuMenu, LuX, LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import {
   SiApple,
   SiBeatport,
@@ -15,7 +16,12 @@ export type IconName =
   | "SiInstagram"
   | "SiSoundcloud"
   | "SiSpotify"
-  | "SiYoutube";
+  | "SiYoutube"
+  | "LuPlus"
+  | "LuMenu"
+  | "LuClose"
+  | "LuArrowLeft"
+  | "LuArrowRight";
 
 const iconMap: Record<IconName, IconType> = {
   SiApple: SiApple,
@@ -24,6 +30,11 @@ const iconMap: Record<IconName, IconType> = {
   SiSoundcloud: SiSoundcloud,
   SiSpotify: SiSpotify,
   SiYoutube: SiYoutube,
+  LuPlus: LuPlus,
+  LuMenu: LuMenu,
+  LuClose: LuX,
+  LuArrowLeft: LuArrowLeft,
+  LuArrowRight: LuArrowRight,
 };
 
 interface IconProps {
