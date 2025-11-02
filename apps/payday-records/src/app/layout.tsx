@@ -10,8 +10,6 @@ import { createMetadata } from "@/utils";
 // import { Analytics } from "@vercel/analytics/next";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 
-
-
 // https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
 const bricolage_grotesque = Bricolage_Grotesque({ subsets: ["latin"] });
 
@@ -35,10 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-scan/dist/auto.global.js"
-        />
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            crossOrigin="anonymous"
+            src="https://unpkg.com/react-scan/dist/auto.global.js"
+          />
+        )}
       </head>
       <body className={`${bricolage_grotesque.className} antialiased`}>
         <ErrorBoundary>
