@@ -5,7 +5,7 @@ import "@/styles/globals.css";
 import Script from "next/script";
 import { metadata as meta } from "@/app/config";
 import Providers from "@/app/providers";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { ErrorBoundary } from "@repo/ui/common/ErrorBoundary";
 import { createMetadata } from "@/utils";
 // import { Analytics } from "@vercel/analytics/next";
 // import { SpeedInsights } from "@vercel/speed-insights/next";

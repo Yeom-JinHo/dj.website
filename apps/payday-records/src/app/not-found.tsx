@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import GalaxyBackground from "@/components/GalaxyBackground";
+import GalaxyBackground from "@repo/ui/common/GalaxyBackground";
 
 import { cn } from "@/utils";
-import { buttonVariants } from "@/components/Button";
+import { buttonVariants } from "@repo/ui/common/Button";
 
 const NotFoundPage: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const NotFoundPage: React.FC = () => {
             href="/"
             className={cn(
               buttonVariants({ variant: "default" }),
-              "w-full self-center rounded-full border border-white/30 bg-white/20 px-8 py-2 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30 md:self-start",
+              "w-full self-center rounded-full border border-white/30 bg-white/20 px-8 py-2 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30 md:self-start"
             )}
           >
             Home

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BlurFade } from "@/components/BlurFade";
+import { BlurFade } from "@repo/ui/common/BlurFade";
 
 function Hero() {
   return (

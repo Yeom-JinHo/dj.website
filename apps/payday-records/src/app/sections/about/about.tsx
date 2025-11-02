@@ -1,7 +1,7 @@
 import React from "react";
-import ScrollVelocity from "@/components/ScrollVelocity";
-import TextReveal from "@/components/fancy/text-reveal";
-import MotionWrap from "@/components/MotionWrap";
+import ScrollVelocity from "@repo/ui/common/ScrollVelocity";
+import TextReveal from "@repo/ui/common/TextReveal";
+import MotionWrap from "@repo/ui/common/MotionWrap";
 
 function About() {
   return (
