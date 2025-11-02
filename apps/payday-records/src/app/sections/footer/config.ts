@@ -1,6 +1,4 @@
-import type { FooterItem } from "@/types/footer";
-
-const footer: FooterItem[] = [
+const footer = [
   {
     title: "Home",
     href: "#",
