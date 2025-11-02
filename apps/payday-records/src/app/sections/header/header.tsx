@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { linkLimit, links } from "./config";
-import Link from "@/components/fancy/link";
+import Link from "next/link";
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);

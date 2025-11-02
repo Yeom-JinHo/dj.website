@@ -2,10 +2,10 @@
 
 import type { ReactNode } from "react";
 import { Component } from "react";
-import GalaxyBackground from "@/components/GalaxyBackground";
+import GalaxyBackground from "../common/GalaxyBackground";
 
-import { cn } from "@/utils";
-import { buttonVariants } from "@/components/Button";
+import { cn } from "../index";
+import { buttonVariants } from "../common/Button";
 
 interface Props {
   children: ReactNode;
@@ -64,7 +64,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <button
                   className={cn(
                     buttonVariants({ variant: "default" }),
-                    "w-full self-center rounded-full border border-white/30 bg-white/20 px-8 py-2 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30 md:self-start",
+                    "w-full self-center rounded-full border border-white/30 bg-white/20 px-8 py-2 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/30 md:self-start"
                   )}
                   onClick={this.handleReload}
                 >

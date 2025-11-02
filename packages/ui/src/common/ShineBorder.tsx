@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/utils";
+import { cn } from "../index";
 
 interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
   /**    * Width of the border in pixels    * @default 1    */ borderWidth?: number;
@@ -35,7 +35,7 @@ interface ShineBorderProps extends React.HTMLAttributes<HTMLDivElement> {
       }
       className={cn(
         "motion-safe:animate-shine pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position]",
-        className,
+        className
       )}
       {...props}
     />

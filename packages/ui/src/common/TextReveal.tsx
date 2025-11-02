@@ -2,7 +2,7 @@
 
 import type { JSX } from "react";
 import React from "react";
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "./Reveal";
 
 interface TextRevealProps {
   children: React.ReactNode;
@@ -33,7 +33,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
         return [];
       } else if (Array.isArray(child)) {
         return child.flatMap((nestedChild: React.ReactNode) =>
-          generatePhrases(nestedChild),
+          generatePhrases(nestedChild)
         );
       }
       return [];

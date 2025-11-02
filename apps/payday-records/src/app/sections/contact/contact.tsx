@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import CopyButton from "@/components/CopyButton";
+import CopyButton from "@repo/ui/common/CopyButton";
 import { MacBookScroll } from "@/components/MacBookScroll";
-import { ShineBorder } from "@/components/ShineBorder";
-import Link from "@/components/fancy/link";
+import { ShineBorder } from "@repo/ui/common/ShineBorder";
+import Link from "next/link";
 
 import { contact } from "./config";
 
@@ -49,7 +49,6 @@ function Contact() {
           <div className="mt-8 flex items-center">
             {contact.socials.map((link, index) => {
               const { href, iconName } = link;
-              // const IconComponent = iconName ? getIcon(iconName) : null;
 
               return (
                 <Link
@@ -57,7 +56,6 @@ function Contact() {
                   href={href}
                   target="_blank"
                   key={`ft-l_social_${index}`}
-                  external
                 >
                   TODO! IconComponent
                   {/* {IconComponent && <IconComponent className="h-6 w-6" />} */}
