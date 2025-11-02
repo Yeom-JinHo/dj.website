@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import GalaxyBackground from "@repo/ui/common/GalaxyBackground";
 
-import { cn } from "@/utils";
+import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/common/Button";
 
 const NotFoundPage: React.FC = () => {

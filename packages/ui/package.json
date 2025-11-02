@@ -6,6 +6,7 @@
     "./fancy/link": "./src/fancy/link/index.tsx",
     "./fancy/link/*": "./src/fancy/link/*",
     "./common/*": "./src/common/*.tsx",
+    ".": "./src/index.ts",
     "./*": "./src/*.tsx"
   },
   "scripts": {

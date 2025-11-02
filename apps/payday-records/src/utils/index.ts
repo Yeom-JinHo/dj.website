@@ -1,10 +1,3 @@
-import { cx } from "class-variance-authority";
-import { twMerge } from "tailwind-merge";
-
-const cn = (...inputs: Parameters<typeof cx>) => twMerge(cx(inputs));
-
-export { cn };
-
 import type { Metadata } from "next/types";
 import { metadata as meta } from "@/app/config";
 

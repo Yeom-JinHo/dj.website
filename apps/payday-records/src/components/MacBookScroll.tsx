@@ -26,7 +26,7 @@ import {
 } from "@tabler/icons-react";
 import { motion, useScroll, useTransform } from "motion/react";
 
-import { cn } from "../../../../packages/ui/src/index";
+import { cn } from "@repo/ui";
 
 export const MacBookScroll = ({
   src,
