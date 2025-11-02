@@ -1,4 +1,4 @@
-import type { Metadata } from "next/types";
+import type { Metadata } from "next";
 import { metadata as meta } from "@/app/config";
 
 export const baseUrl = meta.site.url;
@@ -32,7 +32,7 @@ export function createMetadata(override: Metadata): Metadata {
           type: "image/png",
         },
       ],
-      siteName: "Portfolio",
+      siteName: meta.site.title,
       ...override.openGraph,
     },
     twitter: {
