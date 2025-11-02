@@ -9,7 +9,7 @@ const NotFoundPage: React.FC = () => {
   return (
     <div className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
       <main className="relative h-screen w-screen flex-1">
-        <div className="align-center absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
+        <div className="absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
           <h1 className="text-6xl">Page Not Found</h1>
           <Link
             href="/"
