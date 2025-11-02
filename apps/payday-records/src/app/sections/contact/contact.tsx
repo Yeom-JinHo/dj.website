@@ -3,7 +3,7 @@ import Image from "next/image";
 import CopyButton from "@repo/ui/common/CopyButton";
 import { MacBookScroll } from "@/components/MacBookScroll";
 import { ShineBorder } from "@repo/ui/common/ShineBorder";
-import Link from "@repo/ui/fancy/link";
+import Link from "next/link";
 
 import { contact } from "./config";
 
@@ -56,7 +56,6 @@ function Contact() {
                   href={href}
                   target="_blank"
                   key={`ft-l_social_${index}`}
-                  external
                 >
                   TODO! IconComponent
                   {/* {IconComponent && <IconComponent className="h-6 w-6" />} */}

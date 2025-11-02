@@ -13,15 +13,6 @@ export function Reveal({ phrases, className = "", as = "div" }: RevealProps) {
   const body = useRef(null);
   const isInView = useInView(body, { once: true, margin: "0px" });
 
-  const animation = {
-    initial: { y: "100%", opacity: 0 },
-    enter: (i: number) => ({
-      y: "0",
-      opacity: 1,
-      transition: { duration: 0.5, ease: [0.33, 1, 0.68, 1], delay: 0.05 * i },
-    }),
-  };
-
   const Tag = as;
   return (
     <Tag ref={body} className={className}>
@@ -33,9 +24,25 @@ export function Reveal({ phrases, className = "", as = "div" }: RevealProps) {
           <motion.span
             className="inline-block"
             custom={index}
-            variants={animation}
-            initial="initial"
-            animate={isInView ? "enter" : ""}
+            initial={{ y: "100%", opacity: 0 }}
+            animate={
+              isInView
+                ? {
+                    y: "0",
+                    opacity: 1,
+                    transition: {
+                      duration: 0.5,
+                      ease: [0.33, 1, 0.68, 1] as [
+                        number,
+                        number,
+                        number,
+                        number,
+                      ],
+                      delay: 0.05 * index,
+                    },
+                  }
+                : { y: "100%", opacity: 0 }
+            }
           >
             {phrase}
           </motion.span>
