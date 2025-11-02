@@ -6,6 +6,7 @@ import { ShineBorder } from "@repo/ui/common/ShineBorder";
 import Link from "next/link";
 
 import { contact } from "./config";
+import { Icon } from "@repo/ui/common/Icon";
 
 function Contact() {
   return (
@@ -57,8 +58,7 @@ function Contact() {
                   target="_blank"
                   key={`ft-l_social_${index}`}
                 >
-                  TODO! IconComponent
-                  {/* {IconComponent && <IconComponent className="h-6 w-6" />} */}
+                  {iconName && <Icon name={iconName} className="h-6 w-6" />}
                 </Link>
               );
             })}

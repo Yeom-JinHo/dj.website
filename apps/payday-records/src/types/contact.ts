@@ -1,7 +1,9 @@
+import { IconName } from "@repo/ui/common/Icon";
+
 export interface Socials {
   name: string;
   href: string;
-  iconName?: string;
+  iconName?: IconName;
 }
 
 export interface Contact {
