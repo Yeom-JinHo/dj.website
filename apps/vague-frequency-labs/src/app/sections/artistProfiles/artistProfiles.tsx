@@ -51,7 +51,7 @@ function ArtistProfiles() {
             <CarouselContent>
               {firstRow.map((artist, index) => (
                 <CarouselItem
-                  key={`testimonial_${index}`}
+                  key={`artist_${index}`}
                   className="basis-1/2 xl:basis-1/4"
                 >
                   <div className="h-full p-1">
@@ -72,8 +72,8 @@ function ArtistProfiles() {
               ))}
             </CarouselContent>
           </Carousel>
-          <div className="md:dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 md:bg-linear-to-r md:from-white"></div>
-          <div className="md:dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 md:bg-linear-to-l md:from-white"></div>
+          <div className="md:dark:from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 md:bg-gradient-to-r md:from-white"></div>
+          <div className="md:dark:from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 md:bg-gradient-to-l md:from-white"></div>
         </div>
       </div>
     </MotionWrap>

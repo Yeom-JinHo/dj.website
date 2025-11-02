@@ -44,7 +44,7 @@ EP와 싱글을 발매하며 프로듀서로서의 실력을 입증했습니다.
         iconName: "SiInstagram",
       },
       {
-        name: "Instagram",
+        name: "SoundCloud",
         href: "https://soundcloud.com/ye0m2",
         iconName: "SiSoundcloud",
       },
