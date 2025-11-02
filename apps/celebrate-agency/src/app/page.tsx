@@ -1,16 +1,15 @@
-import React from "react";
 import Link from "next/link";
 import GalaxyBackground from "@repo/ui/common/GalaxyBackground";
 
 import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/common/Button";
 
-const NotFoundPage: React.FC = () => {
+export default function CelebrateAgencyPage() {
   return (
-    <div className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
+    <div className="flex min-h-[100dvh] flex-col">
       <main className="relative h-screen w-screen flex-1">
-        <div className="absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
-          <h1 className="text-6xl">Page Not Found</h1>
+        <div className="align-center absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col gap-4">
+          <h1 className="text-6xl">Coming Soon</h1>
           <Link
             href="/"
             className={cn(
@@ -28,6 +27,4 @@ const NotFoundPage: React.FC = () => {
       </main>
     </div>
   );
-};
-
-export default NotFoundPage;
+}
