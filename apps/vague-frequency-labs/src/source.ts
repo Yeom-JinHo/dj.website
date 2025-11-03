@@ -105,7 +105,7 @@ World DJ Festival, Micro Seoul, Strike Music Festival 등 주요 페스티벌에
         iconName: "SiInstagram",
       },
       {
-        name: "Instagram",
+        name: "SoundCloud",
         href: "https://soundcloud.com/ye0m2",
         iconName: "SiSoundcloud",
       },
