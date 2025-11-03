@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Globe from "./Globe";
 import { COMPANY_SHORT_NAME } from "@/consts/company";
-import { useDebounce } from "@/utils/useDebounce";
+import { useDebounce } from "@/hooks/useDebounce";
 import { motion, useScroll, useTransform } from "motion/react";
 
 import TextReveal from "@repo/ui/common/TextReveal";
