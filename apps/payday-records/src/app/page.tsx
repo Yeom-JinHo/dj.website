@@ -1,20 +1,13 @@
 import About from "./sections/about/about";
 import Contact from "./sections/contact/contact";
 import Hero from "./sections/hero/hero";
-import { Footer, Header } from "./sections";
 
 export default function Home() {
   return (
-    <div className="flex min-h-[100dvh] flex-col">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Contact />
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+    <main className="flex-1">
+      <Hero />
+      <About />
+      <Contact />
+    </main>
   );
 }
