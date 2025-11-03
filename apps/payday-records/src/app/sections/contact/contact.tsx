@@ -56,6 +56,7 @@ function Contact() {
                   className={`underline-offset-4 hover:underline ${index > 0 ? "ml-4 border-l border-gray-300 pl-4" : ""}`}
                   href={href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   key={`ft-l_social_${index}`}
                 >
                   {iconName && <Icon name={iconName} className="h-6 w-6" />}
