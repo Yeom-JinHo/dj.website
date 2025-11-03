@@ -10,7 +10,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@repo/ui/common/carousel";
+} from "@repo/ui/common/Carousel";
 
 const firstRow = [...artistProfiles];
 
