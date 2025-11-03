@@ -45,7 +45,7 @@ function MusicList() {
               </BlurFade>
             ))}
           </div>
-          <Link href="/vague-frequency-labs/music">
+          <Link href="/music">
             <Button className="mt-12">
               <Icon name="LuPlus" className="mr-2 h-4 w-4" />
               More

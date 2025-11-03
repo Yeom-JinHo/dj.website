@@ -72,7 +72,7 @@ export default function ArtistPage(): React.ReactElement {
             {artistProfile.getPages().map((artist, index) => (
               <Link
                 key={index}
-                href={`/vague-frequency-labs/artist/${artist.name}`}
+                href={`/artist/${artist.name}`}
                 className="cursor-pointer"
               >
                 <ArtistSimpleCard artist={artist} />
