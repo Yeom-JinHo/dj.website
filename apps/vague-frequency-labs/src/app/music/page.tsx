@@ -5,8 +5,7 @@ import { musicInfo } from "@/source";
 import { BlurFade } from "@repo/ui/common/BlurFade";
 import FancyLine from "@repo/ui/common/FancyLine";
 import TextReveal from "@repo/ui/common/TextReveal";
-
-// import MusicInfoCard from "../sections/musicList/MusicInfoCard";
+import MusicInfoCard from "../sections/musicList/MusicInfoCard";
 
 // TODO: 수정필요
 // export const metadata = createMetadata({
@@ -80,8 +79,7 @@ export default function MusicPage(): React.ReactElement {
             <div className="flex flex-wrap justify-center gap-16">
               {musicInfos.map((info, index) => (
                 <BlurFade key={info.name + index} inView duration={0.6}>
-                  {/* <MusicInfoCard musicInfo={info} /> */}
-                  {info.name} {index}
+                  <MusicInfoCard musicInfo={info} />
                 </BlurFade>
               ))}
             </div>

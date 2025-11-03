@@ -11,6 +11,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@repo/ui/common/Carousel";
+import ArtistCard from "./artistCard";
 
 const firstRow = [...artistProfiles];
 
@@ -55,7 +56,7 @@ function ArtistProfiles() {
                   className="basis-1/2 xl:basis-1/4"
                 >
                   <div className="h-full p-1">
-                    {/* <ArtistCard
+                    <ArtistCard
                       logoImage={artist.logoImage}
                       key={`artist_${index}`}
                       index={index + 1}
@@ -65,8 +66,7 @@ function ArtistProfiles() {
                       nickname={artist.nickname}
                       image={artist.image}
                       imagePlaceholder={artist.imagePlaceholder}
-                    /> */}
-                    {artist.name} {index}
+                    />
                   </div>
                 </CarouselItem>
               ))}
