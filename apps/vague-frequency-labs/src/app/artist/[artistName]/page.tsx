@@ -73,6 +73,7 @@ export default async function ProjectPage(props0: {
             return (
               <Link
                 target="_blank"
+                rel="noopener noreferrer"
                 href={href}
                 className={cn(
                   buttonVariants({ variant: "link" }),

@@ -59,6 +59,7 @@ const Nav = () => {
               className="underline-offset-4 hover:underline"
               href={href}
               target="_blank"
+              rel="noopener noreferrer"
               key={`ft-l_social_${index}`}
               // external
             >
