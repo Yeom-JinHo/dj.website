@@ -92,7 +92,7 @@ function MusicInfoCard({ musicInfo }: MusicInfoProps) {
             </h3>
             <div
               className="mt-4 flex flex-col gap-2"
-              style={{ borderTop: "1px solid dark-gray" }}
+              style={{ borderTop: "1px solid var(--color-gray-200)" }}
             >
               {musicInfo.socials?.map((social, index) => {
                 return (
