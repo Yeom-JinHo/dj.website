@@ -225,6 +225,7 @@ function MorphingDialogContent({
     <motion.div
       ref={containerRef}
       layoutId={`dialog-${uniqueId}`}
+      id={`motion-ui-morphing-dialog-content-${uniqueId}`}
       className={cn("overflow-hidden", className)}
       style={{ ...style, transform: "translate3d(0, 0, 0)" }}
       role="dialog"
@@ -292,6 +293,7 @@ function MorphingDialogTitle({
   return (
     <motion.div
       layoutId={`dialog-title-container-${uniqueId}`}
+      id={`motion-ui-morphing-dialog-title-${uniqueId}`}
       className={className}
       style={style}
     >
@@ -356,7 +358,7 @@ function MorphingDialogDescription({
       initial="initial"
       animate="animate"
       exit="exit"
-      id={`dialog-description-${uniqueId}`}
+      id={`motion-ui-morphing-dialog-description-${uniqueId}`}
     >
       {children}
     </motion.div>
