@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 import { IconType } from "react-icons";
 import { LuPlus, LuMenu, LuX, LuArrowLeft, LuArrowRight } from "react-icons/lu";
 import {
@@ -44,7 +44,7 @@ interface IconProps {
   className?: string;
 }
 
-export const Icon: React.FC<IconProps> = ({
+export const Icon: FC<IconProps> = ({
   name,
   size = 24,
   color = "currentColor",

@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import type { ReactElement } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Globe from "./Globe";
 import { COMPANY_SHORT_NAME } from "@/consts/company";
@@ -9,8 +10,8 @@ import { motion, useScroll, useTransform } from "motion/react";
 
 import TextReveal from "@repo/ui/common/TextReveal";
 
-export default function ParallaxGlobeLogo(): React.ReactElement {
-  const containerRef = React.useRef<HTMLDivElement | null>(null);
+export default function ParallaxGlobeLogo(): ReactElement {
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,

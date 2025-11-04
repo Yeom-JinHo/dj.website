@@ -42,7 +42,9 @@ import MusicInfoCard from "../sections/musicList/MusicInfoCard";
 //   })),
 // };
 
-export default function MusicPage(): React.ReactElement {
+import type { ReactElement } from "react";
+
+export default function MusicPage(): ReactElement {
   const musicInfos = [
     ...musicInfo.getInfos(),
     ...musicInfo.getInfos(),

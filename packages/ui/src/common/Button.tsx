@@ -1,5 +1,5 @@
+import type { ComponentProps } from "react";
 import type { VariantProps } from "class-variance-authority";
-import * as React from "react";
 import { cva } from "class-variance-authority";
 
 import { cn } from "../index";
@@ -41,7 +41,7 @@ function Button({
   size,
   asChild = false,
   ...props
-}: React.ComponentProps<"button"> &
+}: ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean;
   }) {

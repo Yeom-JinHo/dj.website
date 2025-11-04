@@ -1,5 +1,5 @@
 import type { CollectionPage, WithContext } from "schema-dts";
-import React from "react";
+import React, { ReactElement } from "react";
 import Link from "next/link";
 import { metadata as meta } from "@/app/config";
 import { artistProfile } from "@/source";
@@ -47,7 +47,7 @@ const jsonLd: WithContext<CollectionPage> = {
   // })),
 };
 
-export default function ArtistPage(): React.ReactElement {
+export default function ArtistPage(): ReactElement {
   return (
     <main className="my-16 flex-1">
       <script

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState } from "react";
+import type { CSSProperties, FC, ReactNode, RefObject } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -17,9 +18,9 @@ interface VelocityMapping {
 }
 
 interface VelocityTextProps {
-  children: React.ReactNode;
+  children: ReactNode;
   baseVelocity: number;
-  scrollContainerRef?: React.RefObject<HTMLElement>;
+  scrollContainerRef?: RefObject<HTMLElement>;
   className?: string;
   damping?: number;
   stiffness?: number;
@@ -27,12 +28,12 @@ interface VelocityTextProps {
   velocityMapping?: VelocityMapping;
   parallaxClassName?: string;
   scrollerClassName?: string;
-  parallaxStyle?: React.CSSProperties;
-  scrollerStyle?: React.CSSProperties;
+  parallaxStyle?: CSSProperties;
+  scrollerStyle?: CSSProperties;
 }
 
 interface ScrollVelocityProps {
-  scrollContainerRef?: React.RefObject<HTMLElement>;
+  scrollContainerRef?: RefObject<HTMLElement>;
   texts: string[];
   velocity?: number;
   className?: string;
@@ -42,12 +43,12 @@ interface ScrollVelocityProps {
   velocityMapping?: VelocityMapping;
   parallaxClassName?: string;
   scrollerClassName?: string;
-  parallaxStyle?: React.CSSProperties;
-  scrollerStyle?: React.CSSProperties;
+  parallaxStyle?: CSSProperties;
+  scrollerStyle?: CSSProperties;
 }
 
 function useElementWidth<T extends HTMLElement>(
-  ref: React.RefObject<T | null>,
+  ref: RefObject<T | null>,
 ): number {
   const [width, setWidth] = useState(0);
 
@@ -65,7 +66,7 @@ function useElementWidth<T extends HTMLElement>(
   return width;
 }
 
-export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
+export const ScrollVelocity: FC<ScrollVelocityProps> = ({
   scrollContainerRef,
   texts = [],
   velocity = 100,

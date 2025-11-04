@@ -7,6 +7,7 @@ import { metadata as meta } from "@/app/config";
 import Providers from "@/app/providers";
 import { ErrorBoundary } from "@repo/ui/common/ErrorBoundary";
 import { createMetadata } from "@/utils";
+import { ReactNode } from "react";
 // import { Analytics } from "@vercel/analytics/next";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -28,7 +29,7 @@ export const metadata = createMetadata({
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
