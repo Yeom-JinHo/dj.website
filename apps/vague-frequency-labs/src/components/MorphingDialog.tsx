@@ -89,15 +89,10 @@ function MorphingDialogProvider({
 
 export interface MorphingDialogProps {
   children: ReactNode;
-  transition?: Transition;
 }
 
-function MorphingDialog({ children, transition }: MorphingDialogProps) {
-  return (
-    <MorphingDialogProvider>
-      <MotionConfig transition={transition}>{children}</MotionConfig>
-    </MorphingDialogProvider>
-  );
+function MorphingDialog({ children }: MorphingDialogProps) {
+  return <MorphingDialogProvider>{children}</MorphingDialogProvider>;
 }
 
 export interface MorphingDialogTriggerProps {
