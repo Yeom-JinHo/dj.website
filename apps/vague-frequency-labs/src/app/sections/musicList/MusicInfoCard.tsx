@@ -90,10 +90,7 @@ function MusicInfoCard({ musicInfo }: MusicInfoProps) {
             <h3 className="text-muted-foreground text-sm">
               {musicInfo.artist}
             </h3>
-            <div
-              className="mt-4 flex flex-col gap-2"
-              style={{ borderTop: "1px solid var(--color-gray-200)" }}
-            >
+            <div className="mt-4 flex flex-col gap-2">
               {musicInfo.socials?.map((social, index) => {
                 return (
                   <Link
