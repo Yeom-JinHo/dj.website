@@ -99,6 +99,7 @@ function MusicInfoCard({ musicInfo }: MusicInfoProps) {
                 return (
                   <Link
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={social.href}
                     className={cn(
                       buttonVariants({ variant: "link" }),
