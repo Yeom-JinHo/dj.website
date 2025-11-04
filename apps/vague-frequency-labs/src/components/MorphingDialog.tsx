@@ -5,7 +5,6 @@ import type {
   CSSProperties,
   Dispatch,
   KeyboardEvent,
-  ReactElement,
   ReactNode,
   RefObject,
   SetStateAction,
@@ -168,7 +167,7 @@ function MorphingDialogContent({
     useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
       }
