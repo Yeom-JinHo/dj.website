@@ -1,13 +1,14 @@
 "use client";
 
 import type { MotionProps, UseInViewOptions, Variants } from "motion/react";
+import type { ReactNode } from "react";
 import { useRef } from "react";
 import { AnimatePresence, motion, useInView } from "motion/react";
 
 type MarginType = UseInViewOptions["margin"];
 
 interface BlurFadeProps extends MotionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   variant?: {
     hidden: { y: number };

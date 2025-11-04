@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Bricolage_Grotesque } from "next/font/google";
 
 import "@/styles/globals.css";
@@ -29,7 +30,7 @@ export const metadata = createMetadata({
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>

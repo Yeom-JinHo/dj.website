@@ -1,4 +1,5 @@
 import { Bricolage_Grotesque } from "next/font/google";
+import React from "react";
 
 import "@/styles/globals.css";
 

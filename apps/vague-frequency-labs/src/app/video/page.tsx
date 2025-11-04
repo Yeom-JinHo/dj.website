@@ -40,7 +40,9 @@ import YoutubeCard from "./components/YoutubeCard";
 //   })),
 // };
 
-export default function VideoPage(): React.ReactElement {
+import type { ReactElement } from "react";
+
+export default function VideoPage(): ReactElement {
   const musicInfos = [
     ...musicInfo.getInfos(),
     ...musicInfo.getInfos(),

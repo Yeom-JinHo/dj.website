@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { musicInfo } from "@/source";
 import { BlurFade } from "@repo/ui/common/BlurFade";
+import MusicInfoCard from "./MusicInfoCard";
 import TextReveal from "@repo/ui/common/TextReveal";
 import MotionWrap from "@repo/ui/common/MotionWrap";
 
@@ -40,8 +41,7 @@ function MusicList() {
           <div className="flex flex-wrap justify-center gap-16">
             {musicInfos.map((info, index) => (
               <BlurFade key={info.name + index} inView duration={0.6}>
-                {/* <MusicInfoCard musicInfo={info} /> */}
-                {info.name} {index}
+                <MusicInfoCard musicInfo={info} />
               </BlurFade>
             ))}
           </div>

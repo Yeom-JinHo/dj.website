@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
+import type { ElementType } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
 interface RevealProps {
   phrases: string[];
   className?: string;
-  as?: React.ElementType;
+  as?: ElementType;
 }
 
 export function Reveal({ phrases, className = "", as = "div" }: RevealProps) {

@@ -1,7 +1,8 @@
 "use client";
 
 import type { MotionValue } from "motion/react";
-import React, { useEffect, useRef, useState } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   IconBrightnessDown,
@@ -36,8 +37,8 @@ export const MacBookScroll = ({
 }: {
   src?: string;
   showGradient?: boolean;
-  title?: string | React.ReactNode;
-  badge?: React.ReactNode;
+  title?: string | ReactNode;
+  badge?: ReactNode;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -557,7 +558,7 @@ export const KBtn = ({
   backlit = true,
 }: {
   className?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   childrenClassName?: string;
   backlit?: boolean;
 }) => {
