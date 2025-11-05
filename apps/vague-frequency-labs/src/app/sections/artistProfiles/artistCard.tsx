@@ -103,9 +103,7 @@ export default function ArtistCard({
           </div>
           <div className="flex justify-center p-6">
             <Button asChild className="w-full font-bold">
-              <Link href={`/vague-frequency-labs/artist/${name}`}>
-                View Details
-              </Link>
+              <Link href={`/artist/${name}`}>View Details</Link>
             </Button>
           </div>
           <DialogClose className="text-zinc-50" />
