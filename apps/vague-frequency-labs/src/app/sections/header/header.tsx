@@ -36,9 +36,11 @@ export default function Header() {
         mounted ? "translate-y-0 opacity-100" : "-translate-y-20 opacity-0",
         "motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none",
       ].join(" ")}
-      onMouseLeave={() =>
-        setHoveredLink("/" + window.location.href.split("/").pop() || null)
-      }
+      onMouseLeave={() => {
+        const pathname = window.location.pathname;
+        const matchingLink = links.find((link) => link.href === pathname);
+        setHoveredLink(matchingLink ? pathname : null);
+      }}
     >
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex w-full justify-between">
