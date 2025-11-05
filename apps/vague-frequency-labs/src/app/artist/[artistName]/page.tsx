@@ -58,7 +58,7 @@ export default async function ProjectPage(props0: {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           {artistName}
         </h2>
-        <div className="mt-12 h-96">
+        <div className="mt-12 h-96 w-72">
           <ArtistImage artist={artist} backgroundLogo={false} />
         </div>
 
