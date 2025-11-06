@@ -435,9 +435,9 @@ function MorphingDialogImage({
       height={fill ? undefined : height}
       fill={fill}
       sizes={sizes}
-      priority={false}
+      priority={priority}
       decoding="async"
-      quality={75}
+      quality={quality}
       placeholder={placeholder}
       blurDataURL={blurDataURL}
       onLoad={onLoad}
