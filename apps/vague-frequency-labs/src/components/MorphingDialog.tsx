@@ -21,7 +21,12 @@ import {
 } from "react";
 import Image from "next/image";
 import useClickOutside from "@/hooks/useClickOutside";
-import { AnimatePresence, motion, MotionConfig } from "motion/react";
+import {
+  AnimatePresence,
+  LayoutGroup,
+  motion,
+  MotionConfig,
+} from "motion/react";
 import { createPortal } from "react-dom";
 
 import { cn } from "@repo/ui";
@@ -93,9 +98,10 @@ export interface MorphingDialogProps {
 }
 
 function MorphingDialog({ children, transition }: MorphingDialogProps) {
+  const { uniqueId } = useMorphingDialog();
   return (
     <MorphingDialogProvider transition={transition}>
-      {children}
+      <LayoutGroup id={`dialog-container-${uniqueId}`}>{children}</LayoutGroup>
     </MorphingDialogProvider>
   );
 }
