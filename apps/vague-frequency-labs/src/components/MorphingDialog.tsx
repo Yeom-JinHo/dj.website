@@ -107,10 +107,11 @@ export interface MorphingDialogProps {
 }
 
 function MorphingDialog({ children, transition }: MorphingDialogProps) {
-  const { uniqueId } = useMorphingDialog();
+  const groupId = useId();
+
   return (
     <MorphingDialogProvider transition={transition}>
-      <LayoutGroup id={`dialog-container-${uniqueId}`}>{children}</LayoutGroup>
+      <LayoutGroup id={`dialog-container-${groupId}`}>{children}</LayoutGroup>
     </MorphingDialogProvider>
   );
 }
@@ -147,6 +148,7 @@ function MorphingDialogTrigger({
   return (
     <motion.div
       ref={triggerRef}
+      layout="position"
       layoutId={`dialog-${uniqueId}`}
       className={cn("relative cursor-pointer", className)}
       onClick={handleClick}
@@ -249,6 +251,7 @@ function MorphingDialogContent({
   return (
     <motion.div
       ref={containerRef}
+      layout="position"
       layoutId={`dialog-${uniqueId}`}
       id={`motion-ui-morphing-dialog-content-${uniqueId}`}
       className={cn("overflow-hidden", className)}
@@ -396,8 +399,6 @@ export interface MorphingDialogImageProps {
   priority?: boolean;
   quality?: number;
   objectFit?: CSSProperties["objectFit"];
-  layoutId?: string;
-  // Next.js Image의 다른 일반적인 props들
   placeholder?: "blur" | "empty";
   blurDataURL?: string;
   onLoad?: () => void;
@@ -416,7 +417,6 @@ function MorphingDialogImage({
   priority = false,
   quality = 75,
   objectFit = "cover",
-  layoutId,
   placeholder,
   blurDataURL,
   onLoad,
@@ -439,8 +439,9 @@ function MorphingDialogImage({
       blurDataURL={blurDataURL}
       onLoad={onLoad}
       onError={onError}
+      layout="position"
       className={cn("object-cover", className)}
-      layoutId={layoutId || `dialog-img-${uniqueId}`}
+      layoutId={`dialog-img-${uniqueId}`}
       style={{
         ...style,
         willChange: "transform",
