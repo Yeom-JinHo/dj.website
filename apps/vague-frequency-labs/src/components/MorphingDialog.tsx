@@ -243,7 +243,13 @@ function MorphingDialogContent({
       layoutId={`dialog-${uniqueId}`}
       id={`motion-ui-morphing-dialog-content-${uniqueId}`}
       className={cn("overflow-hidden", className)}
-      style={{ ...style, transform: "translate3d(0, 0, 0)" }}
+      style={{
+        ...style,
+        contain: "layout paint",
+        willChange: "transform, opacity",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+      }}
       role="dialog"
       aria-modal="true"
       aria-labelledby={`motion-ui-morphing-dialog-title-${uniqueId}`}
