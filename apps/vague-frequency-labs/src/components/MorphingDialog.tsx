@@ -443,6 +443,7 @@ function MorphingDialogImage({
       onLoad={onLoad}
       onError={onError}
       className={cn("object-cover", className)}
+      layout
       layoutId={`dialog-img-${uniqueId}`}
       style={{
         ...style,

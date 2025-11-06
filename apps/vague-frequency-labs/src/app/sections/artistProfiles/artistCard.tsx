@@ -47,15 +47,17 @@ export default function ArtistCard({
           className
         )}
       >
-        <DialogImage
-          src={image ?? "/placeholder.svg"}
-          alt={`${name} profile image`}
-          className="h-[300px] w-full object-cover md:h-[720px]"
-          width={1280}
-          height={720}
-          placeholder="blur"
-          blurDataURL={imagePlaceholder}
-        />
+        <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+          <DialogImage
+            src={image ?? "/placeholder.svg"}
+            alt={`${name} profile image`}
+            className="h-full w-full object-cover"
+            width={1280}
+            height={720}
+            placeholder="blur"
+            blurDataURL={imagePlaceholder}
+          />
+        </div>
         <div className="l:p-6 flex grow flex-col items-end justify-between gap-4 p-4">
           <div className="flex w-full flex-col gap-2">
             <DialogTitle className="l:text-3xl text-2xl leading-8 font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
@@ -74,15 +76,17 @@ export default function ArtistCard({
           }}
           className="pointer-events-auto relative flex h-auto w-full min-w-[300px] basis-1/2 flex-col overflow-hidden border border-zinc-950/10 bg-white xl:basis-1/4 dark:border-zinc-50/10 dark:bg-zinc-900"
         >
-          <DialogImage
-            width={1280}
-            height={600}
-            src={image ?? "/placeholder.svg"}
-            alt={`An image which depicts the skill (${name})`}
-            className="h-[300px] w-full object-cover md:h-[600px]"
-            placeholder="blur"
-            blurDataURL={imagePlaceholder}
-          />
+          <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+            <DialogImage
+              width={1280}
+              height={600}
+              src={image ?? "/placeholder.svg"}
+              alt={`An image which depicts the skill (${name})`}
+              className="h-[300px] w-full object-cover md:h-[600px]"
+              placeholder="blur"
+              blurDataURL={imagePlaceholder}
+            />
+          </div>
           <div className="flex flex-col gap-2 p-6">
             <DialogTitle className="text-3xl leading-8 font-bold tracking-tight text-zinc-950 dark:text-zinc-50">
               {name}
