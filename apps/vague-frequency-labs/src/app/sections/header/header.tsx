@@ -5,10 +5,11 @@ import { linkLimit, links } from "./config";
 import Link from "next/link";
 
 import { Icon } from "@repo/ui/common/Icon";
-
+import { motion } from "motion/react";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -35,12 +36,18 @@ export default function Header() {
         mounted ? "translate-y-0 opacity-100" : "-translate-y-20 opacity-0",
         "motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none",
       ].join(" ")}
+      onMouseLeave={() => {
+        const pathname = window.location.pathname;
+        const matchingLink = links.find((link) => link.href === pathname);
+        setHoveredLink(matchingLink ? pathname : null);
+      }}
     >
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex w-full justify-between">
           <Link
             href="/"
             className="inline-flex items-center justify-center text-2xl font-semibold"
+            onClick={() => setHoveredLink(null)}
           >
             v.f.labs
           </Link>
@@ -58,11 +65,19 @@ export default function Header() {
               <div className="flex items-center gap-4 lg:gap-6">
                 {links.slice(0, linkLimit).map(({ title, href }, index) => (
                   <Link
-                    className="flex items-center text-xl font-medium underline-offset-4 hover:underline"
+                    className="group relative flex items-center text-xl font-medium underline-offset-4 transition-colors"
                     href={href}
                     key={`header-desktop-link_${index}`}
+                    onMouseEnter={() => setHoveredLink(href)}
+                    onClick={() => setHoveredLink(href)}
                   >
                     {title}
+                    {hoveredLink === href ? (
+                      <motion.div
+                        layoutId="underline"
+                        className="absolute bottom-0 left-0 h-0.5 w-full bg-primary"
+                      />
+                    ) : null}
                   </Link>
                 ))}
               </div>

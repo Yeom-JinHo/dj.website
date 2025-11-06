@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { metadata as meta } from "@/app/config";
@@ -10,6 +9,7 @@ import { createMetadata } from "@/utils/index";
 
 import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/common/Button";
+import ArtistImage from "@/app/sections/artistProfiles/ArtistImage";
 
 export function generateStaticParams() {
   return artistProfile.getPages().map((artist) => ({
@@ -58,16 +58,10 @@ export default async function ProjectPage(props0: {
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
           {artistName}
         </h2>
-        <div className="mt-12 h-96 w-full overflow-hidden rounded-lg">
-          <Image
-            src={artist.image}
-            width={1280}
-            height={600}
-            alt={`Image of ${artistName}`}
-            className="h-full w-full object-contain"
-            priority
-          />
+        <div className="mt-12 h-96 w-72">
+          <ArtistImage artist={artist} backgroundLogo={false} />
         </div>
+
         <div className="my-8 flex gap-1">
           {artist.socials?.map(({ iconName, href }, index) => {
             return (
