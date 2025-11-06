@@ -438,7 +438,6 @@ function MorphingDialogImage({
       blurDataURL={blurDataURL}
       onLoad={onLoad}
       onError={onError}
-      layout="position"
       className={cn("object-cover", className)}
       layoutId={`dialog-img-${uniqueId}`}
       style={{
