@@ -348,7 +348,11 @@ function MorphingDialogSubtitle({
   const { uniqueId } = useMorphingDialog();
 
   return (
-    <motion.div className={className} style={style}>
+    <motion.div
+      className={className}
+      style={style}
+      id={`motion-ui-morphing-dialog-subtitle-${uniqueId}`}
+    >
       {children}
     </motion.div>
   );
