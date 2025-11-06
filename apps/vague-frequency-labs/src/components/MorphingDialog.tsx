@@ -228,7 +228,6 @@ function MorphingDialogContent({
 
         setFirstFocusableElement(first);
         setLastFocusableElement(last);
-        first.focus();
       }
     } else {
       document.body.classList.remove("overflow-hidden");
