@@ -278,7 +278,7 @@ function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
   if (!mounted) return null;
 
   return createPortal(
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={false}>
       {isOpen && (
         <>
           <motion.div
