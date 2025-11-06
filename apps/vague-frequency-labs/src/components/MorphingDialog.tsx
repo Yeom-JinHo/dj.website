@@ -87,7 +87,16 @@ function MorphingDialogProvider({
 
   return (
     <MorphingDialogContext.Provider value={contextValue}>
-      <MotionConfig transition={transition}>{children}</MotionConfig>
+      <MotionConfig
+        transition={{
+          type: "tween",
+          duration: 0.24,
+          ease: "easeOut",
+          ...(transition ?? {}),
+        }}
+      >
+        {children}
+      </MotionConfig>
     </MorphingDialogContext.Provider>
   );
 }
