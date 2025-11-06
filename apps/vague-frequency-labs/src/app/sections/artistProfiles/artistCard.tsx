@@ -89,7 +89,6 @@ export default function ArtistCard({
             </DialogTitle>
             <DialogDescription
               className="text-md text-muted-foreground text-zinc-700 dark:text-zinc-400"
-              disableLayoutAnimation
               variants={{
                 initial: { opacity: 0 },
                 animate: { opacity: 1 },
