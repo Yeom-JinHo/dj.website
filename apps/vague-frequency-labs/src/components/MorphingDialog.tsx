@@ -302,7 +302,6 @@ function MorphingDialogTitle({
 
   return (
     <motion.div
-      layoutId={`dialog-title-container-${uniqueId}`}
       id={`motion-ui-morphing-dialog-title-${uniqueId}`}
       className={className}
       style={style}
@@ -326,11 +325,7 @@ function MorphingDialogSubtitle({
   const { uniqueId } = useMorphingDialog();
 
   return (
-    <motion.div
-      layoutId={`dialog-subtitle-container-${uniqueId}`}
-      className={className}
-      style={style}
-    >
+    <motion.div className={className} style={style}>
       {children}
     </motion.div>
   );
@@ -339,7 +334,6 @@ function MorphingDialogSubtitle({
 export interface MorphingDialogDescriptionProps {
   children: ReactNode;
   className?: string;
-  disableLayoutAnimation?: boolean;
   variants?: {
     initial: Variant;
     animate: Variant;
@@ -351,18 +345,12 @@ function MorphingDialogDescription({
   children,
   className,
   variants,
-  disableLayoutAnimation,
 }: MorphingDialogDescriptionProps) {
   const { uniqueId } = useMorphingDialog();
 
   return (
     <motion.div
       key={`dialog-description-${uniqueId}`}
-      layoutId={
-        disableLayoutAnimation
-          ? undefined
-          : `dialog-description-content-${uniqueId}`
-      }
       variants={variants}
       className={className}
       initial="initial"
