@@ -84,9 +84,7 @@ export default function ArtistCard({
               src={image ?? "/placeholder.svg"}
               alt={`${name} profile image`}
               className="h-[300px] w-full object-cover md:h-[600px]"
-              placeholder="blur"
               sizes="50vw"
-              blurDataURL={imagePlaceholder}
             />
           </div>
           <div className="flex flex-col gap-2 p-6">
