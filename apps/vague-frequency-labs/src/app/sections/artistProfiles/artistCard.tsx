@@ -54,6 +54,7 @@ export default function ArtistCard({
             className="h-full w-full object-cover"
             width={1280}
             height={720}
+            sizes="(max-width: 768px) 50vw, 25vw"
             placeholder="blur"
             blurDataURL={imagePlaceholder}
           />
