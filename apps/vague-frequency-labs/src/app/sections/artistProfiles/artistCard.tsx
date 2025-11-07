@@ -77,12 +77,12 @@ export default function ArtistCard({
           }}
           className="pointer-events-auto relative flex h-auto w-full min-w-[300px] basis-1/2 flex-col overflow-hidden border border-zinc-950/10 bg-white xl:basis-1/4 dark:border-zinc-50/10 dark:bg-zinc-900"
         >
-          <div className="relative w-full" style={{ aspectRatio: "16 / 9" }}>
+          <div className="relative w-full">
             <DialogImage
               width={1280}
               height={600}
               src={image ?? "/placeholder.svg"}
-              alt={`An image which depicts the skill (${name})`}
+              alt={`${name} profile image`}
               className="h-[300px] w-full object-cover md:h-[600px]"
               placeholder="blur"
               sizes="50vw"
