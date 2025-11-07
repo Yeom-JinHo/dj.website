@@ -39,6 +39,7 @@ function MusicInfoCard({ musicInfo }: MusicInfoProps) {
             height={360}
             src={musicInfo.image}
             alt={musicInfo.name}
+            sizes="(max-width: 768px) 150px, 360px"
             className="h-full w-full object-cover"
           ></DialogImage>
           <div

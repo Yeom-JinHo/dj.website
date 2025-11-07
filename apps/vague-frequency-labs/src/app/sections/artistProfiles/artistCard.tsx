@@ -85,6 +85,7 @@ export default function ArtistCard({
               alt={`An image which depicts the skill (${name})`}
               className="h-[300px] w-full object-cover md:h-[600px]"
               placeholder="blur"
+              sizes="50vw"
               blurDataURL={imagePlaceholder}
             />
           </div>
