@@ -21,7 +21,12 @@ import {
 } from "react";
 import Image from "next/image";
 import useClickOutside from "@/hooks/useClickOutside";
-import { AnimatePresence, motion, MotionConfig } from "motion/react";
+import {
+  AnimatePresence,
+  LayoutGroup,
+  motion,
+  MotionConfig,
+} from "motion/react";
 import { createPortal } from "react-dom";
 
 import { cn } from "@repo/ui";
@@ -82,7 +87,16 @@ function MorphingDialogProvider({
 
   return (
     <MorphingDialogContext.Provider value={contextValue}>
-      <MotionConfig transition={transition}>{children}</MotionConfig>
+      <MotionConfig
+        transition={{
+          type: "tween",
+          duration: 0.24,
+          ease: "easeOut",
+          ...(transition ?? {}),
+        }}
+      >
+        {children}
+      </MotionConfig>
     </MorphingDialogContext.Provider>
   );
 }
@@ -93,9 +107,11 @@ export interface MorphingDialogProps {
 }
 
 function MorphingDialog({ children, transition }: MorphingDialogProps) {
+  const groupId = useId();
+
   return (
     <MorphingDialogProvider transition={transition}>
-      {children}
+      <LayoutGroup id={`dialog-container-${groupId}`}>{children}</LayoutGroup>
     </MorphingDialogProvider>
   );
 }
@@ -132,6 +148,7 @@ function MorphingDialogTrigger({
   return (
     <motion.div
       ref={triggerRef}
+      layout="position"
       layoutId={`dialog-${uniqueId}`}
       className={cn("relative cursor-pointer", className)}
       onClick={handleClick}
@@ -211,7 +228,6 @@ function MorphingDialogContent({
 
         setFirstFocusableElement(first);
         setLastFocusableElement(last);
-        first.focus();
       }
     } else {
       document.body.classList.remove("overflow-hidden");
@@ -234,10 +250,17 @@ function MorphingDialogContent({
   return (
     <motion.div
       ref={containerRef}
+      layout="position"
       layoutId={`dialog-${uniqueId}`}
       id={`motion-ui-morphing-dialog-content-${uniqueId}`}
       className={cn("overflow-hidden", className)}
-      style={{ ...style, transform: "translate3d(0, 0, 0)" }}
+      style={{
+        ...style,
+        contain: "layout paint",
+        willChange: "transform, opacity",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+      }}
       role="dialog"
       aria-modal="true"
       aria-labelledby={`motion-ui-morphing-dialog-title-${uniqueId}`}
@@ -266,7 +289,7 @@ function MorphingDialogContainer({ children }: MorphingDialogContainerProps) {
   if (!mounted) return null;
 
   return createPortal(
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={false}>
       {isOpen && (
         <>
           <motion.div
@@ -302,7 +325,6 @@ function MorphingDialogTitle({
 
   return (
     <motion.div
-      layoutId={`dialog-title-container-${uniqueId}`}
       id={`motion-ui-morphing-dialog-title-${uniqueId}`}
       className={className}
       style={style}
@@ -327,9 +349,9 @@ function MorphingDialogSubtitle({
 
   return (
     <motion.div
-      layoutId={`dialog-subtitle-container-${uniqueId}`}
       className={className}
       style={style}
+      id={`motion-ui-morphing-dialog-subtitle-${uniqueId}`}
     >
       {children}
     </motion.div>
@@ -339,7 +361,6 @@ function MorphingDialogSubtitle({
 export interface MorphingDialogDescriptionProps {
   children: ReactNode;
   className?: string;
-  disableLayoutAnimation?: boolean;
   variants?: {
     initial: Variant;
     animate: Variant;
@@ -351,18 +372,12 @@ function MorphingDialogDescription({
   children,
   className,
   variants,
-  disableLayoutAnimation,
 }: MorphingDialogDescriptionProps) {
   const { uniqueId } = useMorphingDialog();
 
   return (
     <motion.div
       key={`dialog-description-${uniqueId}`}
-      layoutId={
-        disableLayoutAnimation
-          ? undefined
-          : `dialog-description-content-${uniqueId}`
-      }
       variants={variants}
       className={className}
       initial="initial"
@@ -387,8 +402,6 @@ export interface MorphingDialogImageProps {
   priority?: boolean;
   quality?: number;
   objectFit?: CSSProperties["objectFit"];
-  layoutId?: string;
-  // Next.js Image의 다른 일반적인 props들
   placeholder?: "blur" | "empty";
   blurDataURL?: string;
   onLoad?: () => void;
@@ -407,7 +420,6 @@ function MorphingDialogImage({
   priority = false,
   quality = 75,
   objectFit = "cover",
-  layoutId,
   placeholder,
   blurDataURL,
   onLoad,
@@ -424,13 +436,15 @@ function MorphingDialogImage({
       fill={fill}
       sizes={sizes}
       priority={priority}
+      decoding="async"
       quality={quality}
       placeholder={placeholder}
       blurDataURL={blurDataURL}
       onLoad={onLoad}
       onError={onError}
       className={cn("object-cover", className)}
-      layoutId={layoutId || `dialog-img-${uniqueId}`}
+      layout
+      layoutId={`dialog-img-${uniqueId}`}
       style={{
         ...style,
         willChange: "transform",

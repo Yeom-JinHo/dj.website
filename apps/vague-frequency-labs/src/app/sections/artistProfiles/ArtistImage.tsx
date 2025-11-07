@@ -24,6 +24,7 @@ const ArtistImage = ({
         alt={`Image of ${artist.name}`}
         className={`h-full w-full object-cover object-center transition-all duration-300 ${backgroundLogo ? "group-hover:scale-110 group-hover:opacity-30" : "rounded-lg"}`}
         priority
+        sizes="(max-width: 768px) 400px, 520px"
         placeholder="blur"
         blurDataURL={artist.imagePlaceholder}
       />
@@ -33,6 +34,7 @@ const ArtistImage = ({
             src={artist.logoImage}
             width={320}
             height={150}
+            sizes="(max-width: 768px) 320px, 150px"
             alt={`Hover image of ${artist.name}`}
             className="h-auto w-full object-contain brightness-75"
             priority
