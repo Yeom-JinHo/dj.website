@@ -1,29 +1,29 @@
 "use client";
 
-import type { JSX } from "react";
-import React from "react";
+import type { FC, JSX, ReactElement, ReactNode } from "react";
+import { isValidElement } from "react";
 import { Reveal } from "./Reveal";
 
 interface TextRevealProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   as?: keyof JSX.IntrinsicElements;
 }
 
-const TextReveal: React.FC<TextRevealProps> = ({
+const TextReveal: FC<TextRevealProps> = ({
   children,
   className = "",
   as = "div",
 }) => {
-  const generatePhrases = (child: React.ReactNode): string[] => {
+  const generatePhrases = (child: ReactNode): string[] => {
     try {
       if (typeof child === "string") {
         // Split by words but preserve natural line breaks
         return child.split(/\s+/).filter((word) => word.length > 0);
-      } else if (React.isValidElement(child)) {
-        const element = child as React.ReactElement & {
+      } else if (isValidElement(child)) {
+        const element = child as ReactElement & {
           props?: {
-            children?: React.ReactNode;
+            children?: ReactNode;
           };
         };
 
@@ -32,7 +32,7 @@ const TextReveal: React.FC<TextRevealProps> = ({
         }
         return [];
       } else if (Array.isArray(child)) {
-        return child.flatMap((nestedChild: React.ReactNode) =>
+        return child.flatMap((nestedChild: ReactNode) =>
           generatePhrases(nestedChild)
         );
       }

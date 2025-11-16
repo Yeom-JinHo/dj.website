@@ -1,8 +1,8 @@
 "use client";
 
+import type { FC } from "react";
 import type { MotionProps } from "motion/react";
 import type { ReactNode } from "react";
-import React from "react";
 import { motion } from "motion/react";
 
 import { cn } from "../index";
@@ -13,7 +13,7 @@ type MotionWrapProps = {
   id?: string;
 } & MotionProps;
 
-const MotionWrap: React.FC<MotionWrapProps> = ({
+const MotionWrap: FC<MotionWrapProps> = ({
   children,
   className,
   ...props

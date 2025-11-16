@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Bricolage_Grotesque } from "next/font/google";
 
 import "@/styles/globals.css";
@@ -9,6 +10,7 @@ import { ErrorBoundary } from "@repo/ui/common/ErrorBoundary";
 import { createMetadata } from "@/utils";
 // import { Analytics } from "@vercel/analytics/next";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Footer, Header } from "./sections";
 
 // https://iamsteve.me/blog/the-best-ink-trap-typefaces-for-websites
 const bricolage_grotesque = Bricolage_Grotesque({ subsets: ["latin"] });
@@ -28,7 +30,7 @@ export const metadata = createMetadata({
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -43,7 +45,13 @@ export default function RootLayout({
       <body className={`${bricolage_grotesque.className} antialiased`}>
         <ErrorBoundary>
           <Providers>
-            {children}
+            <div className="flex min-h-[100dvh] flex-col">
+              <Header />
+              {children}
+              <footer>
+                <Footer />
+              </footer>
+            </div>
             {/* <Analytics /> */}
             {/* <SpeedInsights /> */}
             {/* <Cursor /> */}

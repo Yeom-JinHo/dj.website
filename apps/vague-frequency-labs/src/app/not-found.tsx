@@ -1,11 +1,11 @@
-import React from "react";
+import type { FC } from "react";
 import Link from "next/link";
 import GalaxyBackground from "@repo/ui/common/GalaxyBackground";
 
 import { cn } from "@repo/ui";
 import { buttonVariants } from "@repo/ui/common/Button";
 
-const NotFoundPage: React.FC = () => {
+const NotFoundPage: FC = () => {
   return (
     <div className="relative flex min-h-[100dvh] items-center justify-center overflow-hidden">
       <main className="relative h-screen w-screen flex-1">
